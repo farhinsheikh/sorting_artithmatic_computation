@@ -8,3 +8,7 @@ read -p "Enter c: " c
 result1=$(( ($a+$b) * $c))
 computation[result1]=$result1
 echo "a+b*c = $result1"
+
+result2=$(($a*$b+$c))
+computation[result2]=$result2
+echo "a*b+c = $result2"
