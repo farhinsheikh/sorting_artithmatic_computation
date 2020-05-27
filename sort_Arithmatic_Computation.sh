@@ -32,3 +32,17 @@ do
 	result[(count++)]=${computation[$key]}
 done
 echo "Stored in dictionary : ${result[@]}"
+
+for ((i=0; ${result[i]}; i++))
+do
+	for ((j=$(($i+1)); $j<$count; j++))
+	do
+		if (( ${result[i]}<${result[j]} ))
+		then
+			temp=${result[i]}
+			result[$i]=${result[j]}
+			result[$j]=$temp
+		fi
+	done
+done
+echo "Result in descending order : ${result[@]}"
