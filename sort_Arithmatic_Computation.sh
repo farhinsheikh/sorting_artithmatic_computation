@@ -26,3 +26,9 @@ echo "a%b+c = $result4"
 count=0
 echo "Stored in dictionary"
 
+for key in ${!computation[@]}
+do
+	echo $key : ${computation[$key]}
+	result[(count++)]=${computation[$key]}
+done
+echo "Stored in dictionary : ${result[@]}"
